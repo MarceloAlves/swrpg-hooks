@@ -1,0 +1,27 @@
+.d-flex.justify-content-center
+  = form_with model: @hook, class: 'col-md-10', local: true do |form|
+    - if @hook.errors.any?
+      .card.text-white.bg-danger.mb-3
+        .card-header Error
+        .card-body
+          ul
+            - @hook.errors.full_messages.each do |msg|
+              li #{msg}
+    .form-group
+      label Title
+      = form.text_field :title, class: 'form-control'
+    .form-group
+      label Hook Text
+      = form.text_area :body, class: 'form-control', rows: 10
+      small.form-text.text-muted#hook-text-count 0/500
+    .form-group
+      label.mr-2 Tags
+      span.hidden-xs-up[data-tags="#{@hook.tags}"]
+      = form.text_field :tags, class: 'form-control', id: 'tag-selector', name: 'tag-selector'
+      small.form-text.text-muted Comma separated tags
+    button.btn.btn-primary[type="submit"] Submit
+
+
+
+
+

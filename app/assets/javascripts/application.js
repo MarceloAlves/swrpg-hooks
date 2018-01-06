@@ -16,4 +16,5 @@
 //= require popper
 //= require bootstrap
 //= require fontawesome-all.js
+//= require jquery.tags-manager.js
 //= require_tree .

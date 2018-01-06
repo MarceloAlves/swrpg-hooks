@@ -1,0 +1,29 @@
+.col-12.col-sm-6.col-md-4.col-lg-4.my-1
+  .card
+    .card-header.d-flex
+      = hook.title
+    .card-body
+      / - if [true, false].sample(1).first
+      /   span.badge.badge-pill.badge-success.py-2.px-3.mb-3
+      /     i.fas.fa-star
+      /     |  Featured
+      / - else
+      /   span.badge.badge-pill.badge-danger.py-2.px-3.mb-3
+      /     i.fas.fa-fire
+      /     |  Trending
+      p.card-text
+        = hook.body
+    ul.list-group.list-group-flush
+      li.list-group-item
+        i.fas.fa-tags.mr-1
+        - hook.tags.each do |tag|
+          span.badge.badge-pill.badge-light.mx-1
+            = tag
+    ul.list-group.list-group-flush
+      li.list-group-item.text-center
+        h5
+          i.fas.fa-thumbs-up.mr-2
+          = hook.votes
+    .card-footer.text-muted
+      i.fas.fa-clock.mr-1
+      = "Added #{time_ago_in_words hook.created_at} ago"
