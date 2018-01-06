@@ -1,0 +1,32 @@
+.col-12.col-sm-6.col-md-4.col-lg-4.my-1
+  .card
+    .card-header.d-flex
+      = ['Boba Fett', 'Luke Skywalker', 'Princess Leia', 'Han Solo', 'R2D2', 'C3PO', 'Lando Calrissian'].sample(1).first
+      |  Strikes Back
+    .card-body
+      - if [true, false].sample(1).first
+        span.badge.badge-pill.badge-success.py-2.px-3.mb-3
+          i.fas.fa-star
+          |  Featured
+      - else
+        span.badge.badge-pill.badge-danger.py-2.px-3.mb-3
+          i.fas.fa-fire
+          |  Trending
+      p.card-text
+      | What a piece of junk. She'll make point five beyond the speed of light. She may not look like much, but she's got it where it counts, kid. I've added some special modifications myself. We're a little rushed, so if you'll hurry aboard we'll get out of here. Hello, sir. Which way? All right, men. Load your weapons! Stop that ship! Blast 'em! Chewie, get us out of here! Oh, my. I'd forgotten how much I hate space travel.
+    ul.list-group.list-group-flush
+      li.list-group-item
+        i.fas.fa-tags.mr-2
+        - ['Bounty Hunter', 'Falcon', 'Star Wars', 'Skywalker', 'Vader', 'Han Solo', 'Chewbacca', 'R2D2', 'C3PO'].sample(rand(1..7)).each do |a|
+          span.badge.badge-pill.badge-light.mx-1
+            = a
+    ul.list-group.list-group-flush
+      li.list-group-item.text-center
+        h5
+          i.fas.fa-thumbs-up.mr-2
+          = rand(500)
+    .card-footer.text-muted
+      i.fas.fa-clock.mr-1
+      | Added 
+      = rand(20)
+      |  days ago

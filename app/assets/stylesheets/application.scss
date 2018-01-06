@@ -1,0 +1,60 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= import fa-svg-with-js.css
+ */
+
+@import "bootswatch/superhero/variables";
+@import "bootstrap";
+@import "bootswatch/superhero/bootswatch";
+
+$gradient-primary: linear-gradient(to right, #fa709a, #E3625A);
+$gradient-success: linear-gradient(to right, #43e97b, #38f9d7);
+$gradient-info: linear-gradient(to right, #4facfe, #00f2fe);
+$gradient-warning: linear-gradient(to right, #f6d365, #fda085);
+$gradient-danger: linear-gradient(to right, #ff0844, #ff825c);
+
+.badge {
+  text-transform: uppercase;
+
+  &.badge-success {
+    background-image: $gradient-success;
+  }
+}
+
+.btn {
+  border-radius: .25rem;
+  text-transform: uppercase;
+  border: none;
+
+  &.btn-primary {
+    background-image: $gradient-primary;
+  }
+
+  &.btn-success {
+    background-image: $gradient-success;
+  }
+
+  &.btn-info {
+    background-image: $gradient-info;
+  }
+
+  &.btn-warning {
+    background-image: $gradient-warning;
+  }
+
+  &.btn-danger {
+    background-image: $gradient-danger;
+  }
+}
