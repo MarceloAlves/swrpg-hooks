@@ -5,7 +5,9 @@
 $(document).on 'turbolinks:load', ->
   return unless $('#tag-selector').length > 0
 
-  $('#tag-selector').tagsManager({
+  tagSelector = $('#tag-selector')
+
+  tagSelector.tagsManager({
     hiddenTagListName: 'hook[tags][]',
     prefilled: $('[data-tags]').data('tags')
   })
@@ -20,3 +22,10 @@ $(document).on 'turbolinks:load', ->
       $('#hook-text-count').addClass('text-muted')
       $('#hook-text-count').removeClass('text-danger')
 
+  $.each $('[data-tags]').data('tags'), (index, tag) ->
+    $('[data-popular-tag="' + tag + '"]').remove()
+
+
+  $('[data-popular-tag]').on 'click', (event) ->
+    tagSelector.tagsManager('pushTag', event.target.innerText.toLowerCase())
+    $(event.target).remove()

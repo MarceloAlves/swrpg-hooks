@@ -21,8 +21,7 @@ gem 'bootswatch'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+gem 'redis', '~> 3.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
