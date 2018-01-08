@@ -20,6 +20,7 @@ gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'bootswatch'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
+gem 'autoprefixer-rails'
 
 gem 'redis', '~> 3.0'
 

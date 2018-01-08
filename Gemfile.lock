@@ -196,6 +196,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootstrap (~> 4.0.0.beta3)
   bootswatch
   byebug

@@ -22,8 +22,10 @@
     ul.list-group.list-group-flush
       li.list-group-item.text-center
         h5
-          i.fas.fa-thumbs-up.mr-2
-          = hook.votes
+          = link_to hook_votes_path(hook), remote: true, method: :post, data: { upvote: '', type: :json } do
+            i.fas.fa-thumbs-up.mr-2.upvote
+          span[data-vote-count]
+            = hook.votes
     .card-footer.text-muted
       i.fas.fa-clock.mr-1
       = "Added #{time_ago_in_words hook.created_at} ago"

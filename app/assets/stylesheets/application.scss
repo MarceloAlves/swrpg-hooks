@@ -59,3 +59,26 @@ $gradient-danger: linear-gradient(to right, #ff0844, #ff825c);
     background-image: $gradient-danger;
   }
 }
+
+.upvote{
+  color: #ffffff;
+  transform: perspective(1px) translateZ(0);
+
+  &:hover {
+    animation-duration: 0.3;
+    animation: pop 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.2);
+  }
+}
+@keyframes hvr-pop {
+  50% {
+    transform: scale(1.2);
+  }
+}
