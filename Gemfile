@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
 gem 'autoprefixer-rails'
 
-gem 'redis', '~> 3.0'
+gem 'redis', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
