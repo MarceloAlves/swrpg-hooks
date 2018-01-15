@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Waypoint from "react-waypoint";
 import Hook from "../components/Hook";
 import LoadingIcon from "../partials/LoadingIcon";
@@ -46,6 +47,18 @@ class Home extends Component {
     const hooks = this.state.hooks.map(hook => (
       <Hook key={hook.id} {...hook} />
     ));
+
+    if (this.state.hooks.length === 0) {
+      return (
+        <div className="d-flex py-5 justify-content-center">
+          <div className="col-12 col-sm 6 text-center">
+            <p>
+              No hooks found. <Link to="/hooks/new">Add one?</Link>
+            </p>
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="d-flex flex-wrap">
