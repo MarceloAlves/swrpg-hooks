@@ -52,6 +52,7 @@ class Home extends Component {
         {hooks}
         {
           <Waypoint
+            bottomOffset="200px"
             onEnter={() => this.getHooks(!this.state.pagination.is_last_page)}
           />
         }

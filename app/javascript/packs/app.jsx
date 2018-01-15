@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import AddHook from "./pages/hooks/AddHook";
 import SingleHook from "./pages/hooks/SingleHook";
+import Footer from "./components/Footer";
 
 export default class App extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class App extends Component {
             <Route path="/hooks/new" component={AddHook} />
             <Route path="/hooks/:slug" component={SingleHook} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     );

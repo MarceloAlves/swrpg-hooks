@@ -25,8 +25,12 @@ $gradient-info: linear-gradient(to right, #00f2fe, #4facfe);
 $gradient-warning: linear-gradient(to right, #f6d365, #fda085);
 $gradient-danger: linear-gradient(to right, #ff0844, #ff825c);
 
-body {
+body, footer, nav {
   background-color: #1C1E22;
+}
+
+body {
+  margin-bottom: 150px;
 }
 
 .card {
