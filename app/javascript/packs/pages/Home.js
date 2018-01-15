@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Hook from "../components/Hook";
 import Waypoint from "react-waypoint";
+import Hook from "../components/Hook";
 import LoadingIcon from "../partials/LoadingIcon";
 
-export class Home extends Component {
+class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,31 +16,29 @@ export class Home extends Component {
       }
     };
 
-    this._getHooks = this._getHooks.bind(this);
+    this.getHooks = this.getHooks.bind(this);
   }
 
   componentDidMount() {
-    this._getHooks();
+    this.getHooks();
   }
 
-  _getHooks(pagesAvailable) {
+  getHooks(pagesAvailable) {
     if (pagesAvailable) {
-      this._startLoader();
+      this.startLoader();
       fetch(`/api/hooks?page=${this.state.pagination.next_page}`)
         .then(res => res.json())
         .then(body => {
-          this.setState(prevState => {
-            return {
-              hooks: prevState.hooks.concat(body.hooks),
-              pagination: body.pagination
-            };
-          });
+          this.setState(prevState => ({
+            hooks: prevState.hooks.concat(body.hooks),
+            pagination: body.pagination
+          }));
         })
         .finally(() => this.setState({ isLoading: false }));
     }
   }
 
-  _startLoader() {
+  startLoader() {
     this.setState({ isLoading: true });
   }
 
@@ -54,7 +52,7 @@ export class Home extends Component {
         {hooks}
         {
           <Waypoint
-            onEnter={() => this._getHooks(!this.state.pagination.is_last_page)}
+            onEnter={() => this.getHooks(!this.state.pagination.is_last_page)}
           />
         }
         {this.state.pagination.is_last_page && (

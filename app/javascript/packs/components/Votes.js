@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Moment from "react-moment";
 
-export class Votes extends Component {
+class Votes extends Component {
+  static errorMessage(ttl) {
+    return (
+      <React.Fragment>
+        Please wait and vote again&nbsp;
+        <Moment add={{ seconds: ttl }} from={Date()} />
+      </React.Fragment>
+    );
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -16,15 +25,6 @@ export class Votes extends Component {
 
   componentWillMount() {
     this.setState({ votes: this.props.votes });
-  }
-
-  errorMessage(ttl) {
-    return (
-      <React.Fragment>
-        Please wait and vote again&nbsp;
-        <Moment add={{ seconds: ttl }} from={Date()} />
-      </React.Fragment>
-    );
   }
 
   handleUpvote() {
@@ -47,7 +47,7 @@ export class Votes extends Component {
           {this.state.votes}
         </h5>
         <small className="text-warning">
-          {this.state.error && this.errorMessage(this.state.ttl)}
+          {this.state.error && Votes.errorMessage(this.state.ttl)}
         </small>
       </li>
     );

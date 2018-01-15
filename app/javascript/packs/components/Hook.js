@@ -5,7 +5,7 @@ import Moment from "react-moment";
 import Tag from "../partials/Tag";
 import FeaturedTag from "../partials/FeaturedTag";
 import TrendingTag from "../partials/TrendingTag";
-import { Votes } from "./Votes";
+import Votes from "./Votes";
 
 const Hook = ({
   id,

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import TagsInput from "react-tagsinput";
 import FormError from "../../partials/FormError";
 
-export class AddHook extends Component {
+class AddHook extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -84,11 +85,11 @@ export class AddHook extends Component {
       <div className="d-flex justify-content-center">
         <div className="col-md-10">
           <div className="form-group">
-            <label htmlFor="#hook_title">Title</label>
+            <label htmlFor="hook_title">Title</label>
             <input
               type="text"
               name="hook[title]"
-              id="#hook_title"
+              id="hook_title"
               value={this.state.title}
               className={`form-control ${this.state.errors.title &&
                 "is-invalid"}`}
@@ -100,7 +101,7 @@ export class AddHook extends Component {
             )}
           </div>
           <div className="form-group">
-            <label htmlFor="#hook_body">Hook Text</label>
+            <label htmlFor="hook_body">Hook Text</label>
             <textarea
               value={this.state.body}
               name="hook[body]"
@@ -123,13 +124,15 @@ export class AddHook extends Component {
             )}
           </div>
           <div className="form-group">
-            <label htmlFor="#hook_tags">
+            <label htmlFor="hook_tags">
               Tags <small>(comma-separated tags)</small>
             </label>
             <TagsInput
               name="hook[tags]"
               id="hook_tags"
-              ref={tagInput => (this.tagInput = tagInput)}
+              ref={tagInput => {
+                this.tagInput = tagInput;
+              }}
               value={this.state.tags}
               onChange={this.handleTagInput}
               addKeys={[188]}
@@ -153,5 +156,9 @@ export class AddHook extends Component {
     );
   }
 }
+
+AddHook.propTypes = {
+  history: PropTypes.any.isRequired
+};
 
 export default AddHook;

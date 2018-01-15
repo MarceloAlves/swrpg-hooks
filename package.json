@@ -1,6 +1,18 @@
 {
   "name": "swrpg-hooks",
   "private": true,
+  "homepage": "https://github.com/marceloalves/swrpg-hooks",
+  "bugs": {
+    "url": "https://github.com/marceloalves/swrpg-hooks/issues"
+  },
+  "author": {
+    "name": "Marcelo Alves",
+    "url": "https://github.com/marceloalves"
+  },
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint app/javascript"
+  },
+  "repository": "github:marceloalves/swrpg-hooks",
   "dependencies": {
     "@rails/webpacker": "^3.2.0",
     "babel-preset-react": "^6.24.1",
@@ -16,6 +28,14 @@
     "react-waypoint": "^8.0.0"
   },
   "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
+    "prettier-eslint": "^8.7.4",
     "webpack-dev-server": "^2.11.0"
   }
 }

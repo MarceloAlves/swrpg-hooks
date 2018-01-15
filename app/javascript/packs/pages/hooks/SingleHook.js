@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Hook from "../../components/Hook";
 import LoadingIcon from "../../partials/LoadingIcon";
 
-export class SingleHook extends Component {
+class SingleHook extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,5 +56,13 @@ export class SingleHook extends Component {
     );
   }
 }
+
+SingleHook.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      slug: PropTypes.string
+    })
+  }).isRequired
+};
 
 export default SingleHook;
