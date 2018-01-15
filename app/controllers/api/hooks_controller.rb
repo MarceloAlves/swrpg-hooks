@@ -1,6 +1,12 @@
 class Api::HooksController < ApplicationController
   def index
-    render json: Hook.all
+    hooks = Hook.all.page(params[:page])
+    render json: {hooks: hooks, pagination: {next_page: hooks.next_page, total_pages: hooks.total_pages, is_last_page: hooks.last_page?}}
+  end
+
+  def show
+    hook = Hook.find_by(slug_id: params[:id])
+    render json: hook
   end
 
   def create
@@ -9,7 +15,7 @@ class Api::HooksController < ApplicationController
 
     if @hook.save
       @hook.tags.each do |tag|
-        Redis.current.zincrby('popular_tags', 1, tag)  
+        Redis.current.zincrby('popular_tags', 1, tag)
       end
       render json: { redirect: true }, status: 200
     else

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :tags, only: [:index]
-    resources :hooks, only: [:index, :new, :create] do
+    resources :hooks, only: [:index, :show, :new, :create] do
       resources :votes, only: [:create]
     end
   end

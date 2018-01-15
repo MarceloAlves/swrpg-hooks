@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import AddHook from "./pages/hooks/AddHook";
+import SingleHook from "./pages/hooks/SingleHook";
 
 export default class App extends Component {
   constructor(props) {
@@ -17,8 +18,11 @@ export default class App extends Component {
       <Router>
         <div className="container">
           <Navigation />
-          <Route exact path="/" component={Home} />
-          <Route path="/hooks/new" component={AddHook} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/hooks/new" component={AddHook} />
+            <Route path="/hooks/:slug" component={SingleHook} />
+          </Switch>
         </div>
       </Router>
     );

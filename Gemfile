@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
+gem 'kaminari'
 
 # Styling
 gem 'bootstrap', '~> 4.0.0.beta3'
