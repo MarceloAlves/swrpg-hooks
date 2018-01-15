@@ -1,12 +1,13 @@
-class VotesController < ApplicationController
+class Api::VotesController < ApplicationController
   def create
     @hook = Hook.find(params[:hook_id])
     if able_to_vote?
       @hook.increment!(:votes, 1)
       set_vote_timeout
-      render json: @hook
+      render json: { votes: @hook.votes, error: false, ttl: 0 }
     else
-      render json: { error: 'Please wait before voting again.' }, status: 429
+      ttl = Redis.current.ttl("votes:#{@hook.id}:#{request.remote_ip}")
+      render json: { error: true, ttl: ttl }, status: 429
     end
   end
 

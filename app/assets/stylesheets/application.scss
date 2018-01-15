@@ -18,19 +18,46 @@
 @import "bootswatch/superhero/variables";
 @import "bootstrap";
 @import "bootswatch/superhero/bootswatch";
-@import "jquery.tags-manager";
 
-$gradient-primary: linear-gradient(to right, #fa709a, #E3625A);
+$gradient-primary: linear-gradient(to right, #F83988, #EB2A48);
 $gradient-success: linear-gradient(to right, #43e97b, #38f9d7);
-$gradient-info: linear-gradient(to right, #4facfe, #00f2fe);
+$gradient-info: linear-gradient(to right, #00f2fe, #4facfe);
 $gradient-warning: linear-gradient(to right, #f6d365, #fda085);
 $gradient-danger: linear-gradient(to right, #ff0844, #ff825c);
+
+body {
+  background-color: #1C1E22;
+}
+
+.card {
+  // background-color: #1C1E22;
+  background-color: #2E3135;
+  // border: 1px solid rgba(28, 30, 24, 0.4);
+
+  .card-header {
+    background-color: #516ae8;
+  }
+
+  &.bg-danger {
+    .card-header {
+      background:none;
+    }
+  }
+
+  .list-group-item {
+    background: #2E3135;
+  }
+}
 
 .badge {
   text-transform: uppercase;
 
   &.badge-success {
     background-image: $gradient-success;
+  }
+
+  &.badge-info {
+    background-image: $gradient-info;
   }
 }
 
@@ -41,6 +68,10 @@ $gradient-danger: linear-gradient(to right, #ff0844, #ff825c);
 
   &.btn-primary {
     background-image: $gradient-primary;
+
+    &:active {
+      background-image: $gradient-primary !important;
+    }
   }
 
   &.btn-success {
@@ -63,6 +94,7 @@ $gradient-danger: linear-gradient(to right, #ff0844, #ff825c);
 .upvote{
   color: #ffffff;
   transform: perspective(1px) translateZ(0);
+  cursor: pointer;
 
   &:hover {
     animation-duration: 0.3;
@@ -71,14 +103,43 @@ $gradient-danger: linear-gradient(to right, #ff0844, #ff825c);
     animation-iteration-count: 1;
   }
 }
-
-@keyframes pop {
+  
+  @keyframes pop {
   50% {
     transform: scale(1.2);
   }
 }
+
 @keyframes hvr-pop {
   50% {
     transform: scale(1.2);
   }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hook-card {
+  animation: fadein 2s;
+}
+
+
+.react-tagsinput-tag {
+  @extend .badge;
+  @extend .badge-info;
+  @extend .badge-pill;
+  @extend .m-1;
+  @extend .mb-2;
+  @extend .p-2;
+  animation: fadein 1s;
+}
+
+.react-tagsinput-input {
+  @extend .form-control;
+}
+
+.react-tagsinput-tag a::before {
+  content: " ×";
 }

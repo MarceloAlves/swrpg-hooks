@@ -5,9 +5,14 @@
     "@rails/webpacker": "^3.2.0",
     "babel-preset-react": "^6.24.1",
     "coffeescript": "1.12.7",
+    "moment": "^2.20.1",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-moment": "^0.7.0",
+    "react-router-dom": "^4.2.2",
+    "react-tagsinput": "^3.19.0",
+    "react-transition-group": "1.x"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.0"

@@ -8,16 +8,15 @@ html lang="en"
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-
-    script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-47315066-8" 
-    javascript:
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-47315066-8');
+    = javascript_pack_tag 'app'
+    - unless Rails.env.development?
+      script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-47315066-8" 
+      javascript:
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-47315066-8');
 
   body
-    .container
-      = render 'shared/navigation'
-      = yield
+    #app
  
