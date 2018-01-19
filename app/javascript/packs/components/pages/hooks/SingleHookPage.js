@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Hook from "../../components/Hook";
+import HookCard from "./HookCard";
 import LoadingIcon from "../../partials/LoadingIcon";
 
-class SingleHook extends Component {
+class SingleHookPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -51,13 +51,13 @@ class SingleHook extends Component {
 
     return (
       <div className="d-flex justify-content-center">
-        <Hook {...this.state.hook} />
+        <HookCard {...this.state.hook} />
       </div>
     );
   }
 }
 
-SingleHook.propTypes = {
+SingleHookPage.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       slug: PropTypes.string
@@ -65,4 +65,4 @@ SingleHook.propTypes = {
   }).isRequired
 };
 
-export default SingleHook;
+export default SingleHookPage;

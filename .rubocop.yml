@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  DisplayCopNames: true
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - bin/**/*
+    - config/routes.rb
+    - node_modules/**/*
+    - config/**/*
+    - Gemfile
+Rails:
+  Enabled: true
+Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Max: 120
+Style/FrozenStringLiteralComment:
+  Enabled: false

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import Home from "./pages/Home";
-import AddHook from "./pages/hooks/AddHook";
-import SingleHook from "./pages/hooks/SingleHook";
-import Footer from "./components/Footer";
+import Navigation from "./components/partials/navigation/Navigation";
+import HomePage from "./components/pages/home/HomePage";
+import AddHookPage from "./components/pages/hooks/AddHookPage";
+import SingleHookPage from "./components/pages/hooks/SingleHookPage";
+import Footer from "./components/partials/footer/Footer";
 
 export default class App extends Component {
   constructor(props) {
@@ -19,9 +19,9 @@ export default class App extends Component {
         <div className="container">
           <Navigation />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/hooks/new" component={AddHook} />
-            <Route path="/hooks/:slug" component={SingleHook} />
+            <Route exact path="/" component={HomePage} />
+            <Route path="/hooks/new" component={AddHookPage} />
+            <Route path="/hooks/:slug" component={SingleHookPage} />
           </Switch>
           <Footer />
         </div>

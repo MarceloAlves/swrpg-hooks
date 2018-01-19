@@ -1,6 +1,6 @@
 class Hook < ApplicationRecord
   validates :title, :body, presence: true
-  validates :body, length: { maximum: 500, too_long: "can't be longer than 500 characters"}
+  validates :body, length: { maximum: 500, too_long: "can't be longer than 500 characters" }
   validate :empty_tags
 
   before_create :generate_slug

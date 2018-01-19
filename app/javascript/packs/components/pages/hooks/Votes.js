@@ -39,17 +39,19 @@ class Votes extends Component {
 
   render() {
     return (
-      <li className="list-group-item text-center">
-        <h5>
-          <a onClick={() => this.handleUpvote()}>
-            <i className="fas fa-thumbs-up mr-2 upvote" />
-          </a>
-          {this.state.votes}
-        </h5>
-        <small className="text-warning">
-          {this.state.error && Votes.errorMessage(this.state.ttl)}
-        </small>
-      </li>
+      <div className="ul list-group list-group-flush">
+        <li className="list-group-item text-center">
+          <h5>
+            <a onClick={() => this.handleUpvote()}>
+              <i className="fas fa-thumbs-up mr-2 upvote" />
+            </a>
+            {this.state.votes}
+          </h5>
+          <small className="text-warning">
+            {this.state.error && Votes.errorMessage(this.state.ttl)}
+          </small>
+        </li>
+      </div>
     );
   }
 }

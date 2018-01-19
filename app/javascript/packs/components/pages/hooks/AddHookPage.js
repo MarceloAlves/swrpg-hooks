@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import TagsInput from "react-tagsinput";
 import FormError from "../../partials/FormError";
 
-class AddHook extends Component {
+class AddHookPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -157,8 +157,8 @@ class AddHook extends Component {
   }
 }
 
-AddHook.propTypes = {
+AddHookPage.propTypes = {
   history: PropTypes.any.isRequired
 };
 
-export default AddHook;
+export default AddHookPage;

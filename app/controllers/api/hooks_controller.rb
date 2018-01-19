@@ -1,7 +1,15 @@
 class Api::HooksController < ApplicationController
   def index
     hooks = Hook.all.page(params[:page])
-    render json: {hooks: hooks, pagination: {next_page: hooks.next_page, total_pages: hooks.total_pages, is_last_page: hooks.last_page?}}
+    result = {
+      hooks: hooks,
+      pagination: {
+        next_page: hooks.next_page,
+        total_pages: hooks.total_pages,
+        is_last_page: hooks.last_page?
+      }
+    }
+    render json: result
   end
 
   def show
