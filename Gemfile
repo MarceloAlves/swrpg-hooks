@@ -18,7 +18,7 @@ gem 'slim-rails'
 gem 'kaminari'
 
 # Styling
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.0'
 gem 'bootswatch'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
