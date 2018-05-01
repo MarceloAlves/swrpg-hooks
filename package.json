@@ -14,7 +14,7 @@
   },
   "repository": "github:marceloalves/swrpg-hooks",
   "dependencies": {
-    "@rails/webpacker": "^3.4.1",
+    "@rails/webpacker": "^3.5.2",
     "babel-preset-react": "^6.24.1",
     "coffeescript": "2.3.0",
     "moment": "^2.22.1",
