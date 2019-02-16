@@ -5,11 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.0'
+gem 'bootsnap'
 gem 'pg', '= 0.21.0'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
-gem 'webpacker', '~> 3.2'
+gem 'webpacker', '~> 3.5'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
@@ -18,7 +19,7 @@ gem 'slim-rails'
 gem 'kaminari'
 
 # Styling
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap'
 gem 'bootswatch'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
@@ -28,13 +29,13 @@ gem 'redis', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 3.0'
   gem 'selenium-webdriver'
 end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'rubocop', '~> 0.52.1', require: false
+  gem 'rubocop', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
