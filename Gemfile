@@ -22,7 +22,7 @@ gem 'kaminari'
 gem 'bootstrap'
 gem 'bootswatch'
 gem 'jquery-rails'
-gem 'popper_js', '~> 1.12.9'
+gem 'popper_js', '~> 1.14.5'
 gem 'autoprefixer-rails'
 
 gem 'redis', '~> 4.0'
