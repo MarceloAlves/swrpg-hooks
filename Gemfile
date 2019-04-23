@@ -29,7 +29,7 @@ gem 'redis', '~> 4.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 3.0'
+  gem 'capybara', '~> 3.18'
   gem 'selenium-webdriver'
 end
 
