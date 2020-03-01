@@ -8,7 +8,7 @@ end
 gem 'rails', '~> 5.2.0'
 gem 'bootsnap'
 gem 'pg', '= 0.21.0'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
 gem 'webpacker', '~> 3.5'
 gem 'uglifier', '>= 1.3.0'
